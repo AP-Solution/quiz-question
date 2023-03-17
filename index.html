@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QuestionQuiz</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      p {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      button {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      button:hover {
+        background-color: #3e8e41;
+      }
+
+      #question-container {
+        text-align: center;
+        font-size: 24px;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>QuestionQuiz Game</h1>
+    <p>Натисни на кнопку щоб отримати випадкове запитання</p>
+    <button onclick="showQuestion()">Show Question</button>
+    <div id="question-container"></div>
+    <script>
+      // Array of questions
+      const questions = [
+        "Твій улюблений фільм? Про що він?",
+        "На що ти витратив(-ла) би мільйон?",
+        "Розкажи про свої хоббі",
+        "Яка подорож тобі запам'яталася найбільше?",
+        "Що ти найбільше цінуєш в людях?",
+        "Розкажи про свій типовий вихідний",
+        "Що найбільше запам'яталося зі школи?",
+        "За ким із блогерів/політиків слідкуєш у соцмережах?",
+        "Кого з менторів на техчеках боїшся найбільше?",
+        "Розкажи трохи про своє рідне місто",
+        "IPhone чи Android?",
+        "Твій улюблений алкогольний напій?",
+        "Місто-мільйонник чи затишне село? Чому?"
+      ];
+
+      // Function to display a random question
+      function showQuestion() {
+        // Get a random index from the questions array
+        const randomIndex = Math.floor(Math.random() * questions.length);
+
+        // Get the question at the random index
+        const question = questions[randomIndex];
+
+        // Display the question in the question container element
+        const questionContainer = document.getElementById("question-container");
+        questionContainer.innerHTML = question;
+      }
+    </script>
+  </body>
+</html>
